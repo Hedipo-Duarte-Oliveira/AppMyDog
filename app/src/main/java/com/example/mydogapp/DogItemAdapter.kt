@@ -18,7 +18,7 @@ class DogItemAdapter : ListAdapter<Dog, DogItemAdapter.DogItemViewHolder>(DIFF_C
             .inflate(LayoutInflater.from(parent.context), parent, false)
 
         // espera ListBinding precisamos Inflar
-        return DogItemViewHolder(binding)
+        return DogItemViewHolder(binding, onClickListener)
     }
 
     // CHAMADO ATODO MOMENTO PEGAR UM ITEM DE ACORDO COM A POSIÇÃO
@@ -30,12 +30,18 @@ class DogItemAdapter : ListAdapter<Dog, DogItemAdapter.DogItemViewHolder>(DIFF_C
     // List espera um ViewHoder, que faz o processo de bindo,pegar iTens da lista.
 
     class DogItemViewHolder(
-        private val binding: DogListItemBinding
+        private val binding: DogListItemBinding,
+        private val onClickListener: ((dogId: Int) -> Unit)?
+
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(dog: Dog) {
             binding.dogName.text = dog.name
             binding.dogBredFor.text = dog.bred_for
+
+            binding.root.setOnClickListener {
+                onClickListener?.invoke(dog.id)
+            }
         }
     }
 

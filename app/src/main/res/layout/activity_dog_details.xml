@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/dog1"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
@@ -50,7 +51,8 @@
         android:id="@+id/dog_life_span"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="10 - 13 years"
+        android:text="@string/life_span_label"
+        tools:text= "10 - 13 years"
         app:layout_constraintTop_toTopOf="@id/dog_life_span_label"
         app:layout_constraintStart_toEndOf="@+id/dog_life_span_label"
         android:layout_marginStart="8dp"
@@ -60,6 +62,7 @@
     <TextView
         android:id="@+id/dog_temperament_label"
         android:layout_width="wrap_content"
+        android:text="@string/temperament_label"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/dog_life_span_label"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +75,7 @@
         android:id="@+id/dog_temperament"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+
         tools:text="Aloof, Clownish, Dignified, Independent, Happy"
         app:layout_constraintTop_toTopOf="@id/dog_temperament_label"
         app:layout_constraintStart_toEndOf="@+id/dog_temperament_label"

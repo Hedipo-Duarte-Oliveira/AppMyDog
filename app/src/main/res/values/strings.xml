@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MyDogApp</string>
     <string name="dog_image_description">dog_image_description</string>
+    <string name="temperament_label">temperament_label</string>
+    <string name="life_span_label">life_span_label</string>
 
 </resources>
